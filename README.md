@@ -15,12 +15,12 @@ The output file "output.txt" will appear in your Working Directory in a second o
 
 ## R script inner workings
 The R script functions as follows:
-1. First of all, necessary packages are downloaded and attached if necessary through a custom loading function.
-2. Now, the script reads the "features.txt" file and selects and renames the requested variables.
-3. The 3 files composing the trainingset are read and combined through "cbind".
-4. The 3 files composing the testset are read and combined through "cbind".
-5. The test and trainingset are now combined through "rbind".
-6. The resulting dataset is now given the cleaned up set of feature names.
-7. The dataset is merged with the activity labels for more transparent activity names.
-8. The dataset goes through "melt" and "summarize" to end up as a tidy and long (not wide) dataset
-9. The dataset is written to disk as "output.txt"
+    1. First of all, necessary packages are downloaded and attached if necessary through a custom loading function.
+    2. Now, the script reads the "features.txt" file and selects and renames the requested variables.
+    3. The 3 files composing the trainingset are read and combined through "cbind".
+    4. The 3 files composing the testset are read and combined through "cbind".
+    5. The test and trainingset are now combined through "rbind".
+    6. The resulting dataset is now given the cleaned up set of feature names.
+    7. The dataset is merged with the activity labels to obtain more transparent activity names.
+    8. The dataset goes through "melt" and "summarize" to end up as a tidy and long (not wide) dataset
+    9. The dataset is written to disk as "output.txt"
