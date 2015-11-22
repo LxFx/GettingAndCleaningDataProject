@@ -82,6 +82,7 @@ rm(activities)
 # Step 7: melt the dataset and summarize it per activity/subject/variable
 allData <- melt(allData, id = c("activity", "subject"), measure.vars=3:81)
 allData <- summarize(group_by(allData, activity, subject, variable), value = mean(value))
+names(allData) <- c("Activity", "Subject", "Variable", "MeanValue")
 
 
 # Step 8: Export the dataset to a file
