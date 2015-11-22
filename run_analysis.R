@@ -33,7 +33,7 @@ features$feature <- gsub("mean", "Mean", features$feature)
 features$feature <- gsub("std", "Std", features$feature)
 features$feature <- gsub("\\-", "", features$feature)
 features$feature <- gsub("BodyBody", "Body", features$feature)
-features$feature <- gsub("Acc", "Accelerator", features$feature)
+features$feature <- gsub("Acc", "Accelerometer", features$feature)
 features$feature <- gsub("Mag", "Magnitude", features$feature)
 features$feature <- gsub("Freq", "Frequency", features$feature)
 features$feature <- gsub("Gyro", "Gyroscope", features$feature)
@@ -82,7 +82,7 @@ rm(activities)
 # Step 7: melt the dataset and summarize it per activity/subject/variable
 allData <- melt(allData, id = c("activity", "subject"), measure.vars=3:81)
 allData <- summarize(group_by(allData, activity, subject, variable), value = mean(value))
-names(allData) <- c("Activity", "Subject", "Variable", "MeanValue")
+names(allData) <- c("Activity", "Subject", "Feature", "MeanValue")
 
 
 # Step 8: Export the dataset to a file
